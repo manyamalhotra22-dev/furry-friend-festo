@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AddActivityDialog } from "@/components/AddActivityDialog";
 import { Badge } from "@/components/ui/badge";
 import { 
   Utensils, 
@@ -61,11 +62,8 @@ export function HealthTracker() {
     <Card className="card-warm">
       <CardHeader className="pb-4">
         <CardTitle className="flex items-center justify-between">
-          <span className="text-lg font-fredoka">Today's Care</span>
-          <Button size="sm" className="btn-secondary h-8">
-            <Plus className="h-4 w-4 mr-1" />
-            Add
-          </Button>
+          <span className="text-lg font-inter">Today's Care</span>
+          <AddActivityDialog />
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">

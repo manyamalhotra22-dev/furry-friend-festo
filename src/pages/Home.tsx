@@ -11,7 +11,7 @@ import {
   Plus,
   Sparkles
 } from "lucide-react";
-import heroImage from "@/assets/hero-pets.jpg";
+import heroImage from "@/assets/hero-realistic.jpg";
 
 export function Home() {
   const [pets] = useState([
@@ -39,7 +39,7 @@ export function Home() {
       <div className="bg-gradient-primary p-6 rounded-b-3xl">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-2xl font-fredoka font-bold text-primary-foreground">
+            <h1 className="text-2xl font-inter font-bold text-primary-foreground">
               Good morning! 🌅
             </h1>
             <p className="text-primary-foreground/80">
@@ -67,7 +67,7 @@ export function Home() {
           <CardHeader className="pb-4">
             <CardTitle className="flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-primary" />
-              <span className="text-lg font-fredoka">Quick Actions</span>
+              <span className="text-lg font-inter">Quick Actions</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -87,7 +87,7 @@ export function Home() {
         {/* Pet Profiles */}
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-fredoka font-semibold">Your Pets</h2>
+            <h2 className="text-xl font-inter font-semibold">Your Pets</h2>
             <Button size="sm" className="btn-secondary">
               <Plus className="h-4 w-4 mr-1" />
               Add Pet
@@ -95,42 +95,33 @@ export function Home() {
           </div>
           
           {pets.map((pet) => (
-            <PetProfile key={pet.id} pet={pet} />
+            <div key={pet.id}>
+              <PetProfile pet={pet} />
+              {/* XP Bar for this pet */}
+              <Card className="card-warm mt-4">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-inter font-medium">Level 5 Progress</span>
+                    <span className="text-xs text-muted-foreground">850/1000 XP</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-3 group cursor-pointer relative">
+                    <div className="bg-gradient-primary h-3 rounded-full transition-all duration-300" style={{width: '85%'}}></div>
+                    {/* Tooltip on hover */}
+                    <div className="invisible group-hover:visible absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-card border border-border rounded-lg shadow-soft text-xs whitespace-nowrap z-10">
+                      <div className="font-inter font-medium mb-1">Level 6 Requirements:</div>
+                      <div className="space-y-1 text-muted-foreground">
+                        <div>• Complete 7-day care streak</div>
+                        <div>• Log 30 health activities</div>
+                        <div>• Get 50 community likes</div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
 
-        {/* Today's Health Tracker */}
-        <HealthTracker />
-
-        {/* Upcoming Reminders */}
-        <Card className="card-warm">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-lg font-fredoka">
-              Upcoming Reminders
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            {upcomingReminders.map((reminder) => (
-              <div 
-                key={reminder.id}
-                className="flex items-center justify-between p-3 rounded-xl bg-muted"
-              >
-                <div>
-                  <p className="font-medium">{reminder.title}</p>
-                  <p className="text-sm text-muted-foreground">{reminder.date}</p>
-                </div>
-                <Badge 
-                  variant={reminder.type === 'urgent' ? 'destructive' : 'secondary'}
-                >
-                  {reminder.type === 'urgent' ? 'Urgent' : 'Scheduled'}
-                </Badge>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-
-        {/* Gamification Stats */}
-        <GamificationStats />
       </div>
     </div>
   );

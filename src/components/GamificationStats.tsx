@@ -63,7 +63,7 @@ export function GamificationStats() {
       <Card className="card-warm">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center justify-between">
-            <span className="text-lg font-fredoka gradient-text">
+            <span className="text-lg font-inter gradient-text">
               Level {stats.level}
             </span>
             <Badge className="bg-gradient-primary text-primary-foreground">
@@ -103,7 +103,7 @@ export function GamificationStats() {
       {/* Achievements */}
       <Card className="card-warm">
         <CardHeader className="pb-4">
-          <CardTitle className="text-lg font-fredoka">Achievements</CardTitle>
+          <CardTitle className="text-lg font-inter">Achievements</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           {achievements.map((achievement) => {

@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				nunito: ['Nunito', 'sans-serif'],
 				fredoka: ['Fredoka', 'cursive'],
+				inter: ['Inter', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

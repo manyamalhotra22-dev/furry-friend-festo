@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CommunityFeed } from "@/components/CommunityFeed";
+import { QASection } from "@/components/QASection";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
@@ -38,7 +39,7 @@ export function Community() {
     <div className="min-h-screen bg-gradient-warm pb-20">
       {/* Header */}
       <div className="bg-gradient-community p-6 rounded-b-3xl">
-        <h1 className="text-2xl font-fredoka font-bold text-white mb-2">
+        <h1 className="text-2xl font-inter font-bold text-white mb-2">
           Pet Community 🐾
         </h1>
         <p className="text-white/90">
@@ -52,7 +53,7 @@ export function Community() {
           <CardHeader className="pb-4">
             <CardTitle className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-primary" />
-              <span className="text-lg font-fredoka">Trending Topics</span>
+              <span className="text-lg font-inter">Trending Topics</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -75,7 +76,7 @@ export function Community() {
           <CardHeader className="pb-4">
             <CardTitle className="flex items-center gap-2">
               <Calendar className="h-5 w-5 text-accent" />
-              <span className="text-lg font-fredoka">Local Events</span>
+              <span className="text-lg font-inter">Local Events</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -108,9 +109,12 @@ export function Community() {
           </CardContent>
         </Card>
 
+        {/* Q&A Section */}
+        <QASection />
+
         {/* Community Feed */}
         <div>
-          <h2 className="text-xl font-fredoka font-semibold mb-4">
+          <h2 className="text-xl font-inter font-semibold mb-4">
             Recent Posts
           </h2>
           <CommunityFeed />

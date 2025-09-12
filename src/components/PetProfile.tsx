@@ -31,7 +31,7 @@ export function PetProfile({ pet, onEdit }: PetProfileProps) {
           />
           <div className="flex-1">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xl font-fredoka font-semibold text-foreground">
+              <h3 className="text-xl font-inter font-semibold text-foreground">
                 {pet.name}
               </h3>
               <Button 
