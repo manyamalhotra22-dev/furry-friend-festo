@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { 
   Home, 
-  Heart, 
+  PawPrint, 
   Users, 
-  Trophy, 
-  PlusCircle,
   User
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,8 +22,7 @@ interface BottomNavigationProps {
 export function BottomNavigation({ activeTab, onTabChange }: BottomNavigationProps) {
   const navItems: NavItem[] = [
     { id: 'home', icon: Home, label: 'Home' },
-    { id: 'health', icon: Heart, label: 'Health' },
-    { id: 'add', icon: PlusCircle, label: 'Add' },
+    { id: 'health', icon: PawPrint, label: 'Health' },
     { id: 'community', icon: Users, label: 'Community' },
     { id: 'profile', icon: User, label: 'Profile' },
   ];
@@ -36,7 +33,6 @@ export function BottomNavigation({ activeTab, onTabChange }: BottomNavigationPro
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
-          const isAddButton = item.id === 'add';
           
           return (
             <Button
@@ -45,14 +41,12 @@ export function BottomNavigation({ activeTab, onTabChange }: BottomNavigationPro
               size="sm"
               onClick={() => onTabChange(item.id)}
               className={`flex flex-col items-center gap-1 h-auto py-2 px-3 ${
-                isAddButton 
-                  ? 'bg-gradient-primary text-primary-foreground hover:bg-gradient-primary/90 rounded-full' 
-                  : isActive
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
+                isActive
+                  ? 'text-primary'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
-              <Icon className={`h-5 w-5 ${isAddButton ? 'h-6 w-6' : ''}`} />
+              <Icon className="h-5 w-5" />
               <span className="text-xs font-medium">{item.label}</span>
             </Button>
           );

@@ -66,35 +66,6 @@ const Index = () => {
         );
       case 'community':
         return <Community />;
-      case 'add':
-        return (
-          <div className="min-h-screen bg-gradient-warm pb-20 flex items-center justify-center">
-            <Card className="card-warm max-w-sm mx-auto">
-              <CardContent className="text-center p-8">
-                <h2 className="text-xl font-fredoka font-semibold mb-4">
-                  Quick Add
-                </h2>
-                <p className="text-muted-foreground mb-6">
-                  What would you like to add?
-                </p>
-                <div className="space-y-3">
-                  <button className="btn-primary w-full">
-                    📸 Share Photo
-                  </button>
-                  <button className="btn-secondary w-full">
-                    🏥 Log Health Activity
-                  </button>
-                  <button className="btn-secondary w-full">
-                    🐕 Add New Pet
-                  </button>
-                  <button className="btn-secondary w-full">
-                    ⏰ Set Reminder
-                  </button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        );
       case 'profile':
         return <Profile />;
       default:

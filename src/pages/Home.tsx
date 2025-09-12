@@ -51,14 +51,6 @@ export function Home() {
           </Button>
         </div>
         
-        {/* Hero Image */}
-        <div className="rounded-2xl overflow-hidden shadow-floating">
-          <img 
-            src={heroImage} 
-            alt="Happy pets in the park"
-            className="w-full h-32 object-cover"
-          />
-        </div>
       </div>
 
       <div className="p-6 space-y-6">
@@ -95,30 +87,7 @@ export function Home() {
           </div>
           
           {pets.map((pet) => (
-            <div key={pet.id}>
-              <PetProfile pet={pet} />
-              {/* XP Bar for this pet */}
-              <Card className="card-warm mt-4">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-inter font-medium">Level 5 Progress</span>
-                    <span className="text-xs text-muted-foreground">850/1000 XP</span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-3 group cursor-pointer relative">
-                    <div className="bg-gradient-primary h-3 rounded-full transition-all duration-300" style={{width: '85%'}}></div>
-                    {/* Tooltip on hover */}
-                    <div className="invisible group-hover:visible absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-card border border-border rounded-lg shadow-soft text-xs whitespace-nowrap z-10">
-                      <div className="font-inter font-medium mb-1">Level 6 Requirements:</div>
-                      <div className="space-y-1 text-muted-foreground">
-                        <div>• Complete 7-day care streak</div>
-                        <div>• Log 30 health activities</div>
-                        <div>• Get 50 community likes</div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <PetProfile key={pet.id} pet={pet} />
           ))}
         </div>
 

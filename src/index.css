@@ -7,59 +7,59 @@
 
 @layer base {
   :root {
-    /* Core Colors - Yellow & White Theme */
+    /* Core Colors - Warm & Professional Theme */
     --background: 0 0% 100%;
-    --foreground: 25 15% 20%;
+    --foreground: 210 20% 15%;
     
-    /* Primary Blue - Professional pet friendly */
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 210 100% 85%;
-    --primary-dark: 210 100% 45%;
+    /* Primary Yellow - Warm and inviting */
+    --primary: 45 100% 62%;
+    --primary-foreground: 210 20% 15%;
+    --primary-light: 45 100% 88%;
+    --primary-dark: 45 100% 52%;
     
-    /* Secondary - Warm grays and soft colors */
-    --secondary: 45 25% 95%;
-    --secondary-foreground: 25 15% 30%;
+    /* Secondary Navy - Professional and calming */
+    --secondary: 210 40% 25%;
+    --secondary-foreground: 0 0% 100%;
     
     /* Cards and surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 25 15% 20%;
+    --card-foreground: 210 20% 15%;
     
-    /* Muted colors */
-    --muted: 45 15% 96%;
-    --muted-foreground: 25 8% 55%;
+    /* Muted colors - Soft grays with warmth */
+    --muted: 45 20% 96%;
+    --muted-foreground: 210 10% 50%;
     
-    /* Accent colors for pets - Yellow accent */
-    --accent: 45 100% 65%;
-    --accent-foreground: 25 15% 20%;
+    /* Accent colors - Navy blue for professional touches */
+    --accent: 210 40% 25%;
+    --accent-foreground: 0 0% 100%;
     
     /* Success and error */
-    --success: 140 70% 55%;
+    --success: 140 60% 45%;
     --success-foreground: 0 0% 100%;
-    --destructive: 0 80% 65%;
+    --destructive: 0 75% 60%;
     --destructive-foreground: 0 0% 100%;
     
     /* Borders and inputs */
-    --border: 45 20% 90%;
-    --input: 45 20% 94%;
-    --ring: 45 100% 65%;
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 45 100% 62%;
     
     /* Pet-themed accent colors */
-    --pet-orange: 25 95% 70%;
-    --pet-blue: 210 85% 70%;
-    --pet-purple: 270 75% 75%;
-    --pet-green: 140 70% 65%;
-    --pet-pink: 330 80% 75%;
+    --pet-orange: 25 85% 65%;
+    --pet-blue: 210 70% 65%;
+    --pet-purple: 270 65% 70%;
+    --pet-green: 140 60% 60%;
+    --pet-pink: 330 70% 70%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 70%));
-    --gradient-warm: linear-gradient(135deg, hsl(45 100% 88%), hsl(0 0% 100%));
-    --gradient-community: linear-gradient(135deg, hsl(210 100% 56%), hsl(45 100% 65%));
+    /* Gradients - Yellow to navy combinations */
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 62%), hsl(45 100% 72%));
+    --gradient-warm: linear-gradient(135deg, hsl(45 100% 95%), hsl(0 0% 100%));
+    --gradient-community: linear-gradient(135deg, hsl(210 40% 25%), hsl(45 100% 62%));
     
-    /* Shadows */
-    --shadow-soft: 0 2px 10px hsl(45 20% 85%);
-    --shadow-warm: 0 4px 20px hsl(45 100% 65% / 0.15);
-    --shadow-floating: 0 8px 30px hsl(45 100% 65% / 0.2);
+    /* Shadows - Warmer, more natural */
+    --shadow-soft: 0 2px 12px hsl(210 20% 85%);
+    --shadow-warm: 0 4px 20px hsl(45 100% 62% / 0.12);
+    --shadow-floating: 0 8px 30px hsl(45 100% 62% / 0.18);
     
     /* Border radius */
     --radius: 0.75rem;
@@ -80,11 +80,11 @@
 @layer components {
   /* Custom component styles */
   .btn-primary {
-    @apply bg-gradient-to-r from-primary to-primary-dark text-primary-foreground font-semibold rounded-xl px-6 py-3 shadow-warm transition-all duration-300 hover:shadow-floating hover:scale-105;
+    @apply bg-gradient-primary text-primary-foreground font-semibold rounded-xl px-6 py-3 shadow-warm transition-all duration-300 hover:shadow-floating hover:scale-105;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground font-semibold rounded-xl px-6 py-3 border border-border hover:bg-primary/10 transition-all duration-300;
+    @apply bg-secondary text-secondary-foreground font-semibold rounded-xl px-6 py-3 border border-border hover:bg-secondary/90 transition-all duration-300;
   }
   
   .card-warm {
@@ -92,10 +92,10 @@
   }
   
   .pet-avatar {
-    @apply w-16 h-16 rounded-full object-cover border-4 border-primary/20 shadow-soft;
+    @apply w-16 h-16 rounded-full object-cover border-4 border-primary/30 shadow-soft;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+    @apply bg-gradient-primary bg-clip-text text-transparent;
   }
 }
