@@ -234,7 +234,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      decrement_likes_count: {
+        Args: { post_id: string }
+        Returns: undefined
+      }
+      increment_likes_count: {
+        Args: { post_id: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

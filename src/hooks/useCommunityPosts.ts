@@ -36,7 +36,7 @@ export const useCommunityPosts = () => {
         .from('community_posts')
         .select(`
           *,
-          profiles!community_posts_user_id_fkey(full_name, username, avatar_url),
+          profiles!inner(full_name, username, avatar_url),
           pets(name, photo_url)
         `)
         .order('created_at', { ascending: false });
@@ -57,7 +57,7 @@ export const useCommunityPosts = () => {
         })
         .select(`
           *,
-          profiles!community_posts_user_id_fkey(full_name, username, avatar_url),
+          profiles!inner(full_name, username, avatar_url),
           pets(name, photo_url)
         `)
         .single();
