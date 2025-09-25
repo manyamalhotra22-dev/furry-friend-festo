@@ -17,11 +17,11 @@ export interface CommunityPost {
     full_name: string;
     username: string;
     avatar_url?: string;
-  };
+  } | null;
   pets?: {
     name: string;
     photo_url?: string;
-  };
+  } | null;
 }
 
 export const useCommunityPosts = () => {
@@ -36,13 +36,13 @@ export const useCommunityPosts = () => {
         .from('community_posts')
         .select(`
           *,
-          profiles!inner(full_name, username, avatar_url),
+          profiles(full_name, username, avatar_url),
           pets(name, photo_url)
         `)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      return data as CommunityPost[];
+      return (data || []) as CommunityPost[];
     },
     enabled: !!user,
   });
@@ -57,7 +57,7 @@ export const useCommunityPosts = () => {
         })
         .select(`
           *,
-          profiles!inner(full_name, username, avatar_url),
+          profiles(full_name, username, avatar_url),
           pets(name, photo_url)
         `)
         .single();

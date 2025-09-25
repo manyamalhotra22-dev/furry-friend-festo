@@ -88,6 +88,13 @@ export type Database = {
             referencedRelation: "pets"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "community_posts_user_id_profiles_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
         ]
       }
       health_logs: {
