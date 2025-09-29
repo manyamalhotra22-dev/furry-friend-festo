@@ -3,6 +3,8 @@ import { CommunityFeed } from "@/components/CommunityFeed";
 import { QASection } from "@/components/QASection";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { CreatePostDialog } from "@/components/CreatePostDialog";
+import { SearchAndFilters } from "@/components/SearchAndFilters";
 import { 
   TrendingUp, 
   Users, 
@@ -48,6 +50,12 @@ export function Community() {
       </div>
 
       <div className="p-6 space-y-6">
+        {/* Create Post */}
+        <CreatePostDialog />
+
+        {/* Search and Filters */}
+        <SearchAndFilters showAdvanced={true} />
+
         {/* Trending Topics */}
         <Card className="card-warm">
           <CardHeader className="pb-4">

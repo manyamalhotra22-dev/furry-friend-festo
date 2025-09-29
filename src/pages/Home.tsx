@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { PetProfile } from "@/components/PetProfile";
 import { HealthTracker } from "@/components/HealthTracker";
 import { GamificationStats } from "@/components/GamificationStats";
+import { AddPetDialog } from "@/components/AddPetDialog";
+import { AddActivityDialog } from "@/components/AddActivityDialog";
+import { AddReminderDialog } from "@/components/AddReminderDialog";
 import { 
   Bell, 
   Calendar, 
@@ -64,14 +67,18 @@ export function Home() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-3">
-              <Button className="btn-primary h-12">
-                <Plus className="h-4 w-4 mr-2" />
-                Log Activity
-              </Button>
-              <Button className="btn-secondary h-12">
-                <Calendar className="h-4 w-4 mr-2" />
-                Set Reminder
-              </Button>
+              <AddActivityDialog>
+                <Button className="btn-primary h-12 w-full">
+                  <Plus className="h-4 w-4 mr-2" />
+                  Log Activity
+                </Button>
+              </AddActivityDialog>
+              <AddReminderDialog>
+                <Button className="btn-secondary h-12 w-full">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Set Reminder
+                </Button>
+              </AddReminderDialog>
             </div>
           </CardContent>
         </Card>
@@ -80,10 +87,12 @@ export function Home() {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-inter font-semibold">Your Pets</h2>
-            <Button size="sm" className="btn-secondary">
-              <Plus className="h-4 w-4 mr-1" />
-              Add Pet
-            </Button>
+            <AddPetDialog>
+              <Button size="sm" className="btn-secondary">
+                <Plus className="h-4 w-4 mr-1" />
+                Add Pet
+              </Button>
+            </AddPetDialog>
           </div>
           
           {pets.map((pet) => (
